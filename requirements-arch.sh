@@ -1,3 +1,3 @@
 #!/bin/bash
 
-sudo pacman -Sy apache php --noconfirm
+sudo pacman -Sy apache php go --noconfirm
