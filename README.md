@@ -1,7 +1,7 @@
 # Evil-Twin-Attack-Website
 
 <div align="center">
-  <img src="/img/eat-web.png" width=750px>
+  <img src="/img/eta-web.png" width=750px>
 </div>
 
 Web template and Go server to implement Evil Twin Wi-Fi attack by Rogue AP.
