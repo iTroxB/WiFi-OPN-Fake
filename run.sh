@@ -1,4 +1,3 @@
-
 #!/bin/bash
 # Author: iTrox
 
@@ -84,8 +83,9 @@ function run_arch {
         exit 1
     fi
 
-    # Move code source to /srv/http path
-    sudo mv /opt/WiFi-OPN-Fake/* /srv/http/
+    # Copy code source to /srv/http path
+    sudo cp -r /opt/WiFi-OPN-Fake/* /srv/http/
+    sudo rm -rf /srv/http/run.sh
     if [ $? -eq 0 ]; then
         echo -e "\n ${green}[✔]${end} ${gray}Code source in /srv/http path...${end}"
     else
@@ -160,10 +160,11 @@ function run_debian {
         exit 1
     fi
 
-    # Move code source to /var/www/http path
-    sudo mv /opt/WiFi-OPN-Fake/* /var/www/html
+    # Copy code source to /var/www/http path
+    sudo cp -r /opt/WiFi-OPN-Fake/* /var/www/html/
+    sudo rm -rf /var/www/html/run.sh
     if [ $? -eq 0 ]; then
-        echo -e "\n ${green}[✔]${end} ${gray}Code source in /srv/http path...${end}"
+        echo -e "\n ${green}[✔]${end} ${gray}Code source in /var/www/html path...${end}"
     else
         echo -e "\n ${red}[✘]${end} ${gray}Code source failed...${end}"
         exit 1
