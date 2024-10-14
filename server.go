@@ -68,7 +68,7 @@ func main() {
         fmt.Fprintf(w, "IP Capturada: %s\n", ip)
     })
 
-    if err := http.ListenAndServe("192.168.50.113:8080", nil); err != nil {
+    if err := http.ListenAndServe("<YOUR_IP_ADDRESS>:<YOUR_PORT>", nil); err != nil {
         log.Fatal("ListenAndServe: ", err)
     }
 }
