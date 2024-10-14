@@ -117,9 +117,8 @@ function run_arch {
 
     # Run Go server
     echo -e "\n${turquoise}➤${end} ${gray}Run Go server...${end}"
-    sleep 5
-    cd /srv/http
-    sudo ./wifiServer
+    sleep 3
+    sudo /srv/http./wifiServer &
     if [ $? -eq 0 ]; then
         echo -e "\n ${green}[✔]${end} ${gray}Run Go server in 127.0.0.1:8888...${end}"
         echo -e "\n ${green}[✔]${end} ${gray}Open browser in 127.0.0.1 to visit the website created for the Rogue AP${end}"
@@ -196,7 +195,7 @@ function run_debian {
 
     # Run Go server
     echo -e "\n${turquoise}➤${end} ${gray}Run Go server...${end}"
-    sudo ./var/www/html/wifiServer
+    sudo /var/www/html/./wifiServer
     if [ $? -eq 0 ]; then
         echo -e "\n ${green}[✔]${end} ${gray}Run Go server in 127.0.0.1:8888...${end}"
         echo -e "\n ${green}[✔]${end} ${gray}Open browser in 127.0.0.1 to visit the website created for the Rogue AP${end}"
