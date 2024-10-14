@@ -45,7 +45,7 @@ function run_arch {
     
     # Install Go
     if [ "$(which go)" == "/usr/bin/go" ]; then
-        echo -e "\n ${green}[✔]${end} ${blue}Go${end} ${gray}installed...${end}"
+        echo -e "\n ${green}[✔]${end} ${blue}Go${end} ${gray}installed...${end}\n"
     else
         echo -e "\n ${red}[✘]${end} ${blue}Go${end} ${gray}is not installed on your system...${end}"
         echo -e "\n ${turquoise}[➤]${end} ${gray}Installing${end} ${blue}Go${end}${gray}...${end}"
