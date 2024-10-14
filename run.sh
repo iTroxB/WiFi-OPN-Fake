@@ -95,7 +95,7 @@ function run_arch {
 
     # Compiling Go server
     echo -e "\n${turquoise}➤${end} ${gray}Compiling Go server...${end}"
-    sudo go build -o wifiServer /srv/http/server.go
+    sudo go build -o /srv/http/wifiServer /srv/http/server.go
     if [ $? -eq 0 ]; then
         echo -e "\n ${green}[✔]${end} ${gray}Go server compiled ok...${end}"
     else
