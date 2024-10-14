@@ -46,31 +46,37 @@ function run_arch {
     # Install Go
     if [ "$(which go)" == "/usr/bin/go" ]; then
         echo -e "\n ${green}[✔]${end} ${blue}Go${end} ${gray}installed...${end}\n"
+        sleep 1
     else
         echo -e "\n ${red}[✘]${end} ${blue}Go${end} ${gray}is not installed on your system...${end}"
         echo -e "\n ${turquoise}[➤]${end} ${gray}Installing${end} ${blue}Go${end}${gray}...${end}"
         sudo pacman -S go --noconfirm
-        echo -e "\n ${green}[✔]${end} ${blue}Go${end} ${gray}has successfully installed on your system...${end}"
+        echo -e "\n ${green}[✔]${end} ${blue}Go${end} ${gray}has successfully installed on your system...${end}"}
+        sleep 1
     fi
 
     # Install Apache
     if [ "$(which httpd)" == "/usr/bin/httpd" ]; then
         echo -e "\n ${green}[✔]${end} ${blue}Apache${end} ${gray}installed...${end}"
+        sleep 1
     else
         echo -e "\n ${red}[✘]${end} ${blue}Apache${end} ${gray}is not installed on your system...${end}"
         echo -e "\n ${turquoise}[➤]${end} ${gray}Installing${end} ${blue}Apache${end}${gray}...${end}"
         sudo pacman -S apache --noconfirm
         echo -e "\n ${green}[✔]${end} ${blue}Apache${end} ${gray}has successfully installed on your system...${end}"
+        sleep 1
     fi
 
     # Install PHP
     if [ "$(which php)" == "/usr/bin/php" ]; then
         echo -e "\n ${green}[✔]${end} ${blue}PHP${end} ${gray}installed...${end}"
+        sleep 1
     else
         echo -e "\n ${red}[✘]${end} ${blue}PHP${end} ${gray}is not installed on your system...${end}"
         echo -e "\n ${turquoise}[➤]${end} ${gray}Installing${end} ${blue}PHP${end}${gray}...${end}"
         sudo pacman -S php --noconfirm
         echo -e "\n ${green}[✔]${end} ${blue}PHP${end} ${gray}has successfully installed on your system...${end}"
+        sleep 1
     fi
 
     # Run apache server
@@ -78,8 +84,10 @@ function run_arch {
     sudo systemctl start httpd.service
     if [ $? -eq 0 ]; then
         echo -e "\n ${green}[✔]${end} ${blue}Apache${end} ${gray}started successfully...${end}"
+        sleep 1
     else
         echo -e "\n ${red}[✘]${end} ${blue}Apache${end} ${gray}failed to start...${end}"
+        sleep 1
         exit 1
     fi
 
@@ -88,8 +96,10 @@ function run_arch {
     sudo rm -rf /srv/http/run.sh
     if [ $? -eq 0 ]; then
         echo -e "\n ${green}[✔]${end} ${gray}Code source in /srv/http path...${end}"
+        sleep 1
     else
         echo -e "\n ${red}[✘]${end} ${gray}Code source failed...${end}"
+        sleep 1
         exit 1
     fi
 
@@ -98,8 +108,10 @@ function run_arch {
     sudo go build -o /srv/http/wifiServer /srv/http/server.go
     if [ $? -eq 0 ]; then
         echo -e "\n ${green}[✔]${end} ${gray}Go server compiled ok...${end}"
+        sleep 1
     else
         echo -e "\n ${red}[✘]${end} ${gray}Go server compiled failed...${end}"
+        sleep 1
         exit 1
     fi
 
