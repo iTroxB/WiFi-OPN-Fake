@@ -59,7 +59,7 @@ function run_arch {
     else
         echo -e "\n ${red}[✘]${end} ${blue}Apache${end} ${gray}is not installed on your system...${end}"
         echo -e "\n ${turquoise}[➤]${end} ${gray}Installing${end} ${blue}Apache${end}${gray}...${end}"
-        sudo pacman -S go --noconfirm
+        sudo pacman -S apache --noconfirm
         echo -e "\n ${green}[✔]${end} ${blue}Apache${end} ${gray}has successfully installed on your system...${end}"
     fi
 
@@ -69,7 +69,7 @@ function run_arch {
     else
         echo -e "\n ${red}[✘]${end} ${blue}PHP${end} ${gray}is not installed on your system...${end}"
         echo -e "\n ${turquoise}[➤]${end} ${gray}Installing${end} ${blue}PHP${end}${gray}...${end}"
-        sudo pacman -S go --noconfirm
+        sudo pacman -S php --noconfirm
         echo -e "\n ${green}[✔]${end} ${blue}PHP${end} ${gray}has successfully installed on your system...${end}"
     fi
 
@@ -105,6 +105,7 @@ function run_arch {
 
     # Run Go server
     echo -e "\n${turquoise}➤${end} ${gray}Run Go server...${end}"
+    sleep 5
     sudo ./srv/http/wifiServer
     if [ $? -eq 0 ]; then
         echo -e "\n ${green}[✔]${end} ${gray}Run Go server in 127.0.0.1:8888...${end}"
