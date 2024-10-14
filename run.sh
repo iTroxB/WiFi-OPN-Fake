@@ -45,7 +45,7 @@ function run_arch {
     
     # Install Go
     if [ "$(which go)" == "/usr/bin/go" ]; then
-        echo -e "\n ${green}[✔]${end} ${blue}Go${end} ${gray}installed...${end}\n"
+        echo -e "\n ${green}[✔]${end} ${blue}Go${end} ${gray}installed...${end}"
         sleep 1
     else
         echo -e "\n ${red}[✘]${end} ${blue}Go${end} ${gray}is not installed on your system...${end}"
@@ -121,7 +121,7 @@ function run_arch {
     sudo /srv/http./wifiServer &
     if [ $? -eq 0 ]; then
         echo -e "\n ${green}[✔]${end} ${gray}Run Go server in 127.0.0.1:8888...${end}"
-        echo -e "\n ${green}[✔]${end} ${gray}Open browser in 127.0.0.1 to visit the website created for the Rogue AP${end}"
+        echo -e "\n ${green}[✔]${end} ${gray}Open browser in 127.0.0.1 to visit the website created for the Rogue AP${end}\n"
     else
         echo -e "\n ${red}[✘]${end} ${blue}Go server failured running...${end}"
         exit 1
